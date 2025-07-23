@@ -93,6 +93,14 @@ std::vector<fterm> factor(long long n) {
     return factors;
 }
 
+long long divisor_count(long long n) {
+    long long count = 1;
+    for (fterm ft: factor(n)) 
+        count *= ft.e + 1;
+    return count;
+}
+   
+
 std::vector<int> digits_from_number(long long n, int base) {
     if (n == 0)
         return std::vector<int> {0};

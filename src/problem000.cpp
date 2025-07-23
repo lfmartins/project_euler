@@ -64,6 +64,7 @@ int main() {
               << " lcm(a,b)=" << lcm(a,b)
               << std::endl;
 */
+/*
     std::cout << "Computing pythagorean triples" << std::endl;
     long long cmax = 100;
     std::vector<triple<long long> > triples;
@@ -71,5 +72,9 @@ int main() {
     std::cout << "Number of triples found: " << triples.size() << std::endl;
     for (triple<long long> t: triples)
         std::cout << "(" << t.a << ", " << t.b << ", " << t.c << ")" << std::endl;
+*/
+    long long n = 10;
+    long long ndivs = divisor_count(n);
+    std::cout << n << " " << ndivs << std::endl;
 
 }
