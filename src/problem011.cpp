@@ -22,7 +22,7 @@ int main() {
         std::vector<long long> row;
         long long num;
 
-        while (iss >> num) {
+        while (is >> num) {
             row.push_back(num);
         }
 

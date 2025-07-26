@@ -1,11 +1,16 @@
 // problem000.cpp
 //
 
+#include <boost/multiprecision/cpp_int.hpp>
 #include <iostream>
 #include <tools.h>
 
+using namespace boost::multiprecision;
+
 int main() {
     std::cout << "Test tools.cpp" << std::endl;
+
+    std::cout << "Boost version: " << BOOST_LIB_VERSION << std::endl;
 /*    
     // Test square root
     for (long long n=1; n <= 10000000LL; ++n) {
@@ -73,8 +78,17 @@ int main() {
     for (triple<long long> t: triples)
         std::cout << "(" << t.a << ", " << t.b << ", " << t.c << ")" << std::endl;
 */
+/*
     long long n = 10;
     long long ndivs = divisor_count(n);
     std::cout << n << " " << ndivs << std::endl;
+*/
+
+
+
+
+
 
 }
+
+
