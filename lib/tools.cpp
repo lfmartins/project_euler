@@ -158,17 +158,15 @@ ull power(ull n, ull e) {
     return result;
 }
 
-template<typename T>
-std::vector<T> range(T a, T b) {
-    std::vector<T> rng;
-    for (T i = a; i < b; ++i)
+std::vector<ull> ull_range(ull a, ull b) {
+    std::vector<ull> rng;
+    for (ull i = a; i < b; ++i)
         rng.push_back(i);
     return rng;
 }
 
-template<typename T>
-T sum(std::vector<T> values) {
-    T s = 0;
+ull ull_sum(std::vector<ull> values) {
+    ull s = 0;
     for (ull i: values)
         s += i;
     return s;

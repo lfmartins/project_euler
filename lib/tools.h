@@ -68,14 +68,10 @@ ull lcm(std::vector<ull> numbers);
 ull power(ull n, ull e);
 
 // Range of values (as in Python)
-template<typename T>
-std::vector<T> range(T a, T b);
+std::vector<ull> ull_range(ull a, ull b);
 
 // Sum of a vector of values
-template<typename T>
-T sum(std::vector<T> values);
-
-long long sum(std::vector<long long> numbers);
+ull ull_sum(std::vector<ull> values);
 
 // Pythagorean triples with c <= cmax
 std::vector<triple<ull>> pythagorean_triples(ull cmax);
