@@ -5,12 +5,12 @@
 int main() {
     std::cout << "Solving Project Euler Problem 012" << std::endl;
 
-    long long t = 1;
-    long long i = 2;
-    long long target = 500;
+    ull t = 1;
+    ull i = 2;
+    ull target = 500;
 
     while(true) {
-        long long ndiv = divisor_count(t);
+        ull ndiv = divisor_count(t);
         if (ndiv > target)
             break;
         t += i++;

@@ -10,22 +10,15 @@ int main() {
     
     std::ifstream file("src/problem011.txt");
     std::string line;
-    std::vector<std::vector<long long>> table;
-
-    if (!file) {
-        std::cerr << "Error opening file.\n";
-        return 1;
-    }
+    std::vector<std::vector<ull>> table;
 
     while (std::getline(file, line)) {
         std::istringstream iss(line);
-        std::vector<long long> row;
-        long long num;
-
-        while (is >> num) {
+        std::vector<ull> row;
+        ull num;
+        while (iss >> num) {
             row.push_back(num);
         }
-
         table.push_back(row);
     }
 
@@ -34,8 +27,8 @@ int main() {
     size_t nrows = table.size();
     size_t ncols = table[0].size();
     
-    long long max_prod = 0;
-    long long prod = 0;
+    ull max_prod = 0;
+    ull prod = 0;
 
     // Horizontal products
     for (size_t i = 0; i < nrows; ++i)

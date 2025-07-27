@@ -14,11 +14,6 @@ int main() {
     std::vector<std::string> lines;
     std::string line;
 
-    if (!file) {
-        std::cerr << "Failed to open file.\n";
-        return 1;
-    }
-
     cpp_int sum = 0;
     while (std::getline(file, line)) {
         if (!line.empty()) {
