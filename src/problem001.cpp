@@ -1,9 +1,14 @@
+// problem001.cpp
+
 #include <iostream>
+#include <tools.h>
 
 int main() {
-    long long sum = 0;
+    std::cout << "Solving Project Euler Problem 001" << std::endl;
+    
+    ull sum = 0;
 
-    for (int i = 0; i < 1000; ++i) {
+    for (ull i = 0; i < 1000; ++i) {
         if (i % 3 == 0 || i % 5 == 0)
            sum += i;
     }

@@ -1,35 +1,30 @@
 // tools.cpp
-//
 
 #include <iostream>
 #include <algorithm>
 #include <tools.h>
 
 // Initialization of primes_base array
-long long primes_limit = 1000000;
-std::vector<long long> primes_base = sieve(primes_limit);
-long long max_prime = primes_base.back();
+ull primes_limit = 1000000;
+std::vector<ull> primes_base = sieve(primes_limit);
+ull max_prime = primes_base.back();
 
-long long flsqrt(long long n) {
-    if (n < 0) {
-        return -1;
-    }
-
+ull flsqrt(ull n) {
     if (n == 0 || n == 1) {
         return n;
     }
 
-    long long x = n / 2;
+    ull x = n / 2;
     while (true) {
-        long long new_x = (x + n / x) / 2;
+        ull new_x = (x + n / x) / 2;
         if (new_x >= x)
             return x;
         x = new_x;
     }
 }
 
-std::vector<long long> sieve(long long limit) {
-    std::vector<long long> primes;
+std::vector<ull> sieve(ull limit) {
+    std::vector<ull> primes;
 
     if (limit < 2) {
         return primes;
@@ -40,15 +35,15 @@ std::vector<long long> sieve(long long limit) {
     is_prime[0] = false;
     is_prime[1] = false;
 
-    for (long long p = 2; p * p <= limit; ++p) {
+    for (ull p = 2; p * p <= limit; ++p) {
         if (is_prime[p]) {
-            for (long long multiple = p * p; multiple <= limit; multiple += p) {
+            for (ull multiple = p * p; multiple <= limit; multiple += p) {
                 is_prime[multiple] = false;
             }
         }
     }
 
-    for (long long p = 2; p <= limit; ++p) {
+    for (ull p = 2; p <= limit; ++p) {
         if (is_prime[p]) {
             primes.push_back(p);
         }
@@ -57,7 +52,7 @@ std::vector<long long> sieve(long long limit) {
     return primes;
 }
 
-std::vector<fterm> factor(long long n) {
+std::vector<fterm> factor(ull n) {
     std::vector<fterm> factors;
 
     if (n == 0) {
@@ -70,16 +65,16 @@ std::vector<fterm> factor(long long n) {
         return factors;
     }
 
-    long long left = n;
-    for (long long p : primes_base) {
+    ull left = n;
+    for (ull p : primes_base) {
         if (p * p > n) {
             if (left > 1) {
                 factors.push_back(fterm{left, 1});
             }
             break;
         }
-        int e = 0;
-        long long rem = n % p;
+        ull e = 0;
+        ull rem = n % p;
         while (rem == 0) {
             e++;
             left /= p;
@@ -93,18 +88,17 @@ std::vector<fterm> factor(long long n) {
     return factors;
 }
 
-long long divisor_count(long long n) {
-    long long count = 1;
+ull divisor_count(ull n) {
+    ull count = 1;
     for (fterm ft: factor(n)) 
         count *= ft.e + 1;
     return count;
 }
    
-
-std::vector<int> digits_from_number(long long n, int base) {
+std::vector<ull> digits_from_number(ull n, ull base) {
     if (n == 0)
-        return std::vector<int> {0};
-    std::vector<int> digits;
+        return std::vector<ull> {0};
+    std::vector<ull> digits;
     while (n > 0) {
         digits.push_back(n % base);
         n = n / base;
@@ -113,28 +107,21 @@ std::vector<int> digits_from_number(long long n, int base) {
     return digits;
 }
 
-long long number_from_digits(std::vector<int> digits, int base) {
-    long long n = 0;
-    for (int d: digits) {
+ull number_from_digits(std::vector<ull> digits, ull base) {
+    ull n = 0;
+    for (ull d: digits) {
         n = base * n + d;
     }
     return n;
 }
 
-long long gcd(long long a, long long b) {
-    if (a < 0)
-        a = -a;
-    if (b < 0)
-        b = -b;
-
-    if (a < b) {
-        long long t = a;
-        a = b;
-        b = t;
+ull gcd(ull a, ull b) {
+    if (a == 0) {
+        return b;
     }
 
     while (b != 0) {
-        long long r = a % b;
+        ull r = a % b;
         a = b;
         b = r;
     }
@@ -142,26 +129,26 @@ long long gcd(long long a, long long b) {
     return a;
 }
 
-long long gcd(std::vector<long> numbers) {
-    long long g = 0;
-    for (long long i: numbers)
+ull gcd(std::vector<ull> numbers) {
+    ull g = 0;
+    for (ull i: numbers)
         g = gcd(g, i);
     return g;
 }
 
-long long lcm(long long a, long long b) {
+ull lcm(ull a, ull b) {
     return (a / gcd(a, b)) * b;
 }
 
-long long lcm(std::vector<long long> numbers) {
-    long long l = 1;
-    for (long long i: numbers)
+ull lcm(std::vector<ull> numbers) {
+    ull l = 1;
+    for (ull i: numbers)
         l = lcm(l, i);
     return l;
 }
 
-long long power(long long n, int e) {
-    long long result = 1;
+ull power(ull n, ull e) {
+    ull result = 1;
     while (e > 0) {
         if (e % 2 == 1)
             result *= n;
@@ -171,28 +158,30 @@ long long power(long long n, int e) {
     return result;
 }
 
-std::vector<long long> range(long long a, long long b) {
-    std::vector<long long> rng;
-    for (long long i = a; i < b; ++i)
+template<typename T>
+std::vector<T> range(T a, T b) {
+    std::vector<T> rng;
+    for (T i = a; i < b; ++i)
         rng.push_back(i);
     return rng;
 }
 
-long long sum(std::vector<long long> numbers) {
-    long long s = 0;
-    for (long long i: numbers)
+template<typename T>
+T sum(std::vector<T> values) {
+    T s = 0;
+    for (ull i: values)
         s += i;
     return s;
 }
 
-std::vector<triple<long long>> pythagorean_triples(long long cmax) {
-    std::vector<triple<long long>> triples;
-    for (long long m = 2; m <= flsqrt(cmax); ++m) {
-        for (long long n = 1; n < m; ++n) {
+std::vector<triple<ull>> pythagorean_triples(ull cmax) {
+    std::vector<triple<ull>> triples;
+    for (ull m = 2; m <= flsqrt(cmax); ++m) {
+        for (ull n = 1; n < m; ++n) {
             if ( (gcd(m, n) == 1) && (m % 2 == 0 || n % 2 ==0)) {
-                long long a = m * m - n * n;
-                long long b = 2 * m * n;
-                long long c = m * m + n * n;
+                ull a = m * m - n * n;
+                ull b = 2 * m * n;
+                ull c = m * m + n * n;
                 if (c > cmax)
                     return triples;
                 triples.push_back(triple{a, b, c});

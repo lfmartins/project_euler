@@ -1,14 +1,18 @@
+// problem002.cpp
 #include <iostream>
+#include <tools.h>
 
 int main() {
-    long long f1 = 1, f2 = 2;
-    long long sum = 0;
+    std::cout << "Solving Project Euler Problem 002" << std::endl;
 
-    while (f2 <= 4000000L) {
+    ull f1 = 1, f2 = 2;
+    ull sum = 0;
+
+    while (f2 <= 4000000ULL) {
         if (f2 % 2 == 0) {
             sum += f2;
         }
-        long long f3 = f1 + f2;
+        ull f3 = f1 + f2;
         f1 = f2;
         f2 = f3;
     }

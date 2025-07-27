@@ -9,14 +9,14 @@ using ll = long long;
 using ull = unsigned long long;
 
 // Initial vector of primes
-extern long long primes_limit;
-extern std::vector<long long> primes_base;
-extern long long max_prime;
+extern ull primes_limit;
+extern std::vector<ull> primes_base;
+extern ull max_prime;
 
 // Factoriztion term: p = prime factor, e = exponent
 struct fterm {
-    long long p;
-    int e;
+    ull p;
+    ull e;
 };
 
 // Pair of values
@@ -34,46 +34,50 @@ struct triple {
     T c;
 };
 
-// Factor number n
-std::vector<fterm> factor(long long n);
-
-// Find the number of divisors of n
-long long divisor_count(long long n);
+// Compute floor of square root of n
+ull flsqrt(ull n);
 
 // Find prime numbers up to limit
-std::vector<long long> sieve(long long limit);
+std::vector<ull> sieve(ull limit);
 
-// Compute floor of square root of n
-long long flsqrt(long long n);
+// Factor number n
+std::vector<fterm> factor(ull n);
+
+// Find the number of divisors of n
+ull divisor_count(ull n);
 
 // Find "digits" of a n in given base
-std::vector<int> digits_from_number(long long n, int base = 10);
+std::vector<ull> digits_from_number(long long n, ull base = 10);
 
 // Compute n from digits in given base
-long long number_from_digits(std::vector<int>, int base = 10);
+ull number_from_digits(std::vector<ull>, ull base = 10);
 
 // GCD of two numbers
-long long gcd(long long a, long long b);
+ull gcd(ull a, ull b);
 
 // GCD of a vector of numbers
-long long gcd(std::vector<long> numbers);
+ull gcd(std::vector<ull> numbers);
 
 // LCM of two numbers
-long long lcm(long long a, long long b);
+ull lcm(ull a, ull b);
 
 // LCM of a vector of numbers
-long long lcm(std::vector<long long> numbers);
+ull lcm(std::vector<ull> numbers);
 
 // Raise a number to a power
-long long power(long long n, int e);
+ull power(ull n, ull e);
 
-// Range of integers (as in Python)
-std::vector<long long> range(long long a, long long b);
+// Range of values (as in Python)
+template<typename T>
+std::vector<T> range(T a, T b);
 
-// Sum of a vector of numbers
+// Sum of a vector of values
+template<typename T>
+T sum(std::vector<T> values);
+
 long long sum(std::vector<long long> numbers);
 
 // Pythagorean triples with c <= cmax
-std::vector<triple<long long>> pythagorean_triples(long long cmax);
+std::vector<triple<ull>> pythagorean_triples(ull cmax);
 
 #endif // TOOLS_H
