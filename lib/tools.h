@@ -5,6 +5,9 @@
 
 #include <vector>
 
+using ll = long long;
+using ull = unsigned long long;
+
 // Initial vector of primes
 extern long long primes_limit;
 extern std::vector<long long> primes_base;
