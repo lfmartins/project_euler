@@ -8,14 +8,12 @@ using boost::multiprecision::cpp_int;
 int main() {
     std::cout << "Solving Project Euler Problem 019" << std::endl;
 
-    ull n = 20;
+    ull n = 100;
     cpp_int factorial = 1;
 
     for (ull i = 2; i <= n; ++i) {
         factorial *= i;
     }
-
-    std::cout << factorial << std::endl;
 
     cpp_int digit_sum = 0;
     while (factorial > 0) {
