@@ -147,8 +147,30 @@ ull lcm(std::vector<ull> numbers) {
     return l;
 }
 
+ull power_mod(ull n, ull e, ull m) {
+    ull result = 1;
+    while (e > 0) {
+        if (e % 2 == 1)
+            result = result * e % m;
+        n = n * n % m;
+        e /= 2;
+    }
+    return result;
+}
+
 ull power(ull n, ull e) {
     ull result = 1;
+    while (e > 0) {
+        if (e % 2 == 1)
+            result *= n;
+        n *= n;
+        e /= 2;
+    }
+    return result;
+}
+
+cpp_int mp_power(cpp_int n, ull e) {
+    cpp_int result = 1;
     while (e > 0) {
         if (e % 2 == 1)
             result *= n;

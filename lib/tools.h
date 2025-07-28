@@ -4,6 +4,9 @@
 #define TOOLS_H
 
 #include <vector>
+#include <boost/multiprecision/cpp_int.hpp>
+
+using boost::multiprecision::cpp_int;
 
 using ll = long long;
 using ull = unsigned long long;
@@ -64,8 +67,14 @@ ull lcm(ull a, ull b);
 // LCM of a vector of numbers
 ull lcm(std::vector<ull> numbers);
 
+// Raise a number to a power mod m
+ull power_mod(ull n, ull e, ull m);
+
 // Raise a number to a power
 ull power(ull n, ull e);
+
+
+cpp_int mp_power(cpp_int n, ull e); 
 
 // Range of values (as in Python)
 std::vector<ull> ull_range(ull a, ull b);
