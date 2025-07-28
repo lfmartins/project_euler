@@ -88,11 +88,48 @@ std::vector<fterm> factor(ull n) {
     return factors;
 }
 
-ull divisor_count(ull n) {
+ull divisors_count(ull n) {
+    if (n == 0)
+        return 0;
+
+    if (n == 1)
+        return 1;
+
     ull count = 1;
     for (fterm ft: factor(n)) 
         count *= ft.e + 1;
     return count;
+}
+
+ull proper_divisors_count(ull n) {
+    if (n == 0 || n == 1)
+        return 0;
+
+    return divisors_count(n) - 1;
+}
+
+ull divisors_sum(ull n) {
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+
+    ull ds = 1;
+    for (fterm tf: factor(n)) {
+        ds *= (power(tf.p, tf.e + 1) - 1) / (tf.p -1);
+    }
+    return ds;
+}
+
+ull proper_divisors_sum(ull n) {
+    if (n == 0 || n == 1)
+        return 0;
+
+    return divisors_sum(n) - n;
+}
+
+bool is_amicable_pair(ull m, ull n) {
+    return proper_divisors_sum(m) == proper_divisors_sum(n);
 }
    
 std::vector<ull> digits_from_number(ull n, ull base) {

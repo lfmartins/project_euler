@@ -47,7 +47,19 @@ std::vector<ull> sieve(ull limit);
 std::vector<fterm> factor(ull n);
 
 // Find the number of divisors of n
-ull divisor_count(ull n);
+ull divisors_count(ull n);
+
+// Find the number of proper divisors of n
+ull proper_divisors_count(ull n);
+
+// Find the sum of the divisors of n
+ull divisors_sum(ull n);
+
+// Find the sum of the proper divisors of n
+ull proper_divisors_sum(ull n);
+
+// Determine if two integers are amicable
+bool is_amicable_pair(ull m, ull n); 
 
 // Find "digits" of a n in given base
 std::vector<ull> digits_from_number(long long n, ull base = 10);
