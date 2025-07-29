@@ -58,6 +58,15 @@ ull divisors_sum(ull n);
 // Find the sum of the proper divisors of n
 ull proper_divisors_sum(ull n);
 
+// Determine if integer is perfect
+bool is_perfect(ull n); 
+
+// Determine if integer is abundant
+bool is_abundant(ull n);
+
+// Determine if integer is deficient
+bool is_deficient(ull n);
+
 // Determine if two integers are amicable
 bool is_amicable_pair(ull m, ull n); 
 

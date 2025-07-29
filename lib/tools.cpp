@@ -131,6 +131,18 @@ ull proper_divisors_sum(ull n) {
 bool is_amicable_pair(ull m, ull n) {
     return proper_divisors_sum(m) == proper_divisors_sum(n);
 }
+
+bool is_perfect(ull n) {
+    return proper_divisors_sum(n) == n;
+}
+
+bool is_abundant(ull n) {
+    return proper_divisors_sum(n) > n;
+}
+
+bool is_deficient(ull n) {
+    return proper_divisors_sum(n) < n;
+}
    
 std::vector<ull> digits_from_number(ull n, ull base) {
     if (n == 0)
