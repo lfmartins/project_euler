@@ -6,28 +6,21 @@
 int main() {
     std::cout << "Solving Project Euler Problem 024" << std::endl;
 
-    std::vector<ull> factorials(10, 0);
-    factorials[0] = 1;
-    for(ull i = 1; i < 10; ++i) {
-        factorials[i] = factorials[i-1] * i;
-    }
-
     std::vector<ull> digits = ull_range(0, 10); 
-    ull n = 1000000;
+    ull n = 1000000 - 1; // List of permuations is 0-based.
     std::vector<ull> perm;
-    ull k = 9;
     
-    while(n > 0) {
-        n /= factorials[k];
-        if (n == 0) {
-            for (ull d: digits) {
-                perm.push_back(d);
-            }
-            return perm;
-        }
+    for (ull k = digits.size(); k > 0; --k) {
+        ull fact = factorial(k - 1);
+        ull q = n / fact;
         perm.push_back(digits[q]);
         digits.erase(digits.begin() + q);
-        n %= factorials[k--];
+        n %= fact;
+        if (n == 0)
+            break;
+    }
+    for (ull d: digits) {
+        perm.push_back(d);
     }
 
     for (ull v: perm) {

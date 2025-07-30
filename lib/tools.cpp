@@ -23,6 +23,18 @@ ull flsqrt(ull n) {
     }
 }
 
+ull factorial(ull n) {
+    if (n == 0) {
+        return 1;
+    }
+
+    ull prod = 1;
+    for (ull i = 2; i <= n; ++i) {
+        prod *= i;
+    }
+    return prod;
+}
+
 std::vector<ull> sieve(ull limit) {
     std::vector<ull> primes;
 
@@ -42,7 +54,7 @@ std::vector<ull> sieve(ull limit) {
             }
         }
     }
-
+    
     for (ull p = 2; p <= limit; ++p) {
         if (is_prime[p]) {
             primes.push_back(p);

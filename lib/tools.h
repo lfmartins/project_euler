@@ -40,6 +40,9 @@ struct triple {
 // Compute floor of square root of n
 ull flsqrt(ull n);
 
+// Factorial
+ull factorial(ull n); 
+
 // Find prime numbers up to limit
 std::vector<ull> sieve(ull limit);
 
@@ -94,7 +97,7 @@ ull power_mod(ull n, ull e, ull m);
 // Raise a number to a power
 ull power(ull n, ull e);
 
-
+// Raise number to a power, multiprecision version
 cpp_int mp_power(cpp_int n, ull e); 
 
 // Range of values (as in Python)
