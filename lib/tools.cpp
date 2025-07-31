@@ -128,7 +128,7 @@ ull divisors_sum(ull n) {
 
     ull ds = 1;
     for (fterm tf: factor(n)) {
-        ds *= (power(tf.p, tf.e + 1) - 1) / (tf.p -1);
+        ds *= (ull_power(tf.p, tf.e + 1) - 1) / (tf.p -1);
     }
     return ds;
 }
@@ -219,7 +219,7 @@ ull power_mod(ull n, ull e, ull m) {
     return result;
 }
 
-ull power(ull n, ull e) {
+ull ull_power(ull n, ull e) {
     ull result = 1;
     while (e > 0) {
         if (e % 2 == 1)

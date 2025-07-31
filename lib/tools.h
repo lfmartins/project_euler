@@ -95,7 +95,7 @@ ull lcm(std::vector<ull> numbers);
 ull power_mod(ull n, ull e, ull m);
 
 // Raise a number to a power
-ull power(ull n, ull e);
+ull ull_power(ull n, ull e);
 
 // Raise number to a power, multiprecision version
 cpp_int mp_power(cpp_int n, ull e); 
