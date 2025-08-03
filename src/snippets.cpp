@@ -36,3 +36,99 @@
                   << "digits=" << 1 + static_cast<ull>(std::floor(dlog_fib_approx)) << " "
                   << std::endl; 
     }
+
+// Problem 26 need to organize this
+// Returns the decimal representation of p / q
+//std::string decimal_repr(ull p, ull q) {
+//    ull int_part = p / q;
+//    std::string dr = std::format("{}.", int_part);
+//
+//    ull r = p % q;
+//    std::vector<ull> dvec;
+//    ull start = 0;
+//    bool done = false;
+//    while(true) {
+//        std::vector<ull> rvec;
+//        ull d = 10 * r / q;
+//        r = 10 * r % q;
+//        for(size_t i = 0; i < rvec.size(); ++i) {
+//            if (rvec[i] == r) { //dvec[i] == d && 
+//                start = i;
+//                done = true;
+//                break;
+//            }
+//        }
+//        if (done) {
+//            break;
+//        }
+//        dvec.push_back(d);
+//        rvec.push_back(r);
+//    }
+//
+//    for(std::size_t i = 0; i < start; ++i) {
+//        dr += static_cast<char>('0' + dvec[i]);
+//    }
+//    dr += '(';
+//    for(std::size_t i = start; i < dvec.size(); ++i) {
+//        dr += static_cast<char>('0' + dvec[i]);
+//    }
+//    dr += ')';
+//
+//    return dr;
+//}
+//
+
+//    for(ull q = 1; q <= 1000; ++ q) {
+//        std::string dr = decimal_repr(p, q);
+////        double d = static_cast<double>(p) / static_cast<double>(q);
+//        std::regex pattern(R"(\[([^\]]*)\])");
+//        std::smatch match;
+//        std::string repeating;
+//        if (std::regex_search(dr, match, pattern)) {
+//            repeating = match[1];
+//        } else {
+//            std::cout << "Error: no match" << std::endl;
+//            return 1;
+//        }
+//        std::cout << "q= " << q 
+//                  << " size=" << repeating.size() 
+//                  << " repeating=" << repeating 
+//                  << std::endl;
+//    }
+    
+//    std::vector<std::pair<ull, ull>> test_cases = {
+//        {1, 2},
+//        {1, 3},
+//        {1, 7},
+//        {20, 6},
+//        {2, 5},
+//        {17, 13},
+//    };
+//
+//    for (auto [p, q]: test_cases) {
+//        std::string dr = decimal_repr(p, q);
+//        double d = static_cast<double>(p) / static_cast<double>(q);
+//        std::cout << std::format("p={} q={} dr={} double={:.17}", p, q, dr, d) << std::endl;
+//    }
+//
+//
+//    std::cout << "Solving Project Euler Problem 026" << std::endl;
+//
+//    ull max_length = 0;
+//    for (ull q = 2; q <= 100; ++q) {
+//        ull length = repeating_length(q);
+//        if (length > max_length) {
+//            max_length = length;
+//            std::cout << "q=" << q 
+//                      << std::setprecision(30) << " " << 1.0 / q
+//                      << " max_so_far=" << max_length << std::endl;
+//        }
+//    }
+//
+//    std::cout << max_length << std::endl;
+//
+/*
+        ull length = repeating_length(q);
+        std::cout << "q=" << std::setprecision(20) << 1.0 / q 
+                  << " length=" << length << std::endl;
+*/

@@ -46,6 +46,9 @@ ull factorial(ull n);
 // Find prime numbers up to limit
 std::vector<ull> sieve(ull limit);
 
+// Determine if number is prime
+bool is_prime(ull n);
+
 // Factor number n
 std::vector<fterm> factor(ull n);
 

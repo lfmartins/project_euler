@@ -64,6 +64,22 @@ std::vector<ull> sieve(ull limit) {
     return primes;
 }
 
+bool is_prime(ull n) {
+    if (n == 0 || n == 1) 
+        return false;
+
+    ull limit = flsqrt(n);
+    for (ull i = 0; true; ++i) {
+        ull p = primes_base[i];
+        if (p > limit) {
+            break;
+        }
+        if (n % p == 0) 
+            return false;
+    }
+    return true;
+}
+
 std::vector<fterm> factor(ull n) {
     std::vector<fterm> factors;
 
