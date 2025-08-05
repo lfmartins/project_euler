@@ -4,21 +4,29 @@
 
 int main() {
     std::cout << "Solving Project Euler Problem 027" << std::endl;
-
-
-    ll limit = 10;
-    for(ll a = -limit; a <= limit; ++a) {
-        for(ll b = -limit; b <= limit; ++b) {
-            std::cout << "a=" << a << " b=" << b << std::endl;
-            for (ull n =0; n <= 100; ++n) {
-                ll f = n * n + a * n + b;
-                bool p = is_prime(f);
-                std::cout << "   n=" << n << " f(n)=" << fn << " prime=" << p << std::endl;
-                if (p)
+    
+    ll limit = 1000;
+    ll nmax = 0;
+    ll amax = 0, bmax = 0;
+    for (ll a = -limit + 1; a <= limit -1; ++a) {
+        for (ll b = 1; b <= limit; ++b) {
+            ll n = 0;
+            while(true) {
+                ll v = n * (n + a) + b;
+                if (v <= 0 || !is_prime(v)) {
                     break;
+                }
+                ++n;
+            }
+            if (n > nmax) {
+                nmax = n;
+                amax = a;
+                bmax = b;
             }
         }
     }
+
+    std::cout << amax * bmax << std::endl;
 
     return 0;
 }
