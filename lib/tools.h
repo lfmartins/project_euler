@@ -77,7 +77,7 @@ bool is_deficient(ull n);
 bool is_amicable_pair(ull m, ull n); 
 
 // Find "digits" of a n in given base
-std::vector<ull> digits_from_number(long long n, ull base = 10);
+std::vector<ull> digits_from_number(ull n, ull base = 10);
 
 // Compute n from digits in given base
 ull number_from_digits(std::vector<ull>, ull base = 10);
