@@ -1,5 +1,7 @@
 // problem030.cpp
+
 #include <iostream>
+#include <vector>
 #include <tools.h>
 
 int main() {
