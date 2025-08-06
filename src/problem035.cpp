@@ -28,23 +28,6 @@ int main() {
     }
 
     std::cout << cp_count << std::endl;
-    
-
-//    while (k < p) {
-//        
-//
-//    for (ull i = 1; i < k; i++) {
-//        ull pc = p / 10 + (p % 10)
-//    }
-
-//    for (ull p: primes_base) {
-//        ull k = 1 + static_cast<ull>(std::floor(std::log10(p)));
-//        bool is_cp = true;
-//        for (ull i = 1; i < k; i++) {
-//            ull pc = p / 10 + (p % 10)
-//        }
-//    }
-
 
     return 0;
 }
