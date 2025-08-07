@@ -25,7 +25,7 @@ int main() {
         }
     }
     
-    std::cout << max_start << std::endl;
+    std::cout << "Solution: " << max_start << std::endl;
 
     return 0;
 }

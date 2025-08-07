@@ -1,5 +1,6 @@
 // problem022.cpp
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -43,7 +44,7 @@ int main() {
         sum += (i + 1) * alpha_score(names[i]);
     }
 
-    std::cout << sum << std::endl;
+    std::cout << "Solution: " <<  sum << std::endl;
 
     return 0;
 }

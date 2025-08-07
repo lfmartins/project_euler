@@ -15,7 +15,7 @@ int main() {
                           n * std::log10(phi);
         ull ndigits = 1 + static_cast<ull>(std::floor(dlog_fib_approx));
         if (ndigits == 1000) {
-            std::cout<< n << std::endl;
+            std::cout << "Solution: " << n << std::endl;
             return 0;
         }
     }

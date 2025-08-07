@@ -17,7 +17,7 @@ int main() {
         f2 = f3;
     }
     
-    std::cout << sum << std::endl;
+    std::cout << "Solution: " << sum << std::endl;
 
     return 0;
 }

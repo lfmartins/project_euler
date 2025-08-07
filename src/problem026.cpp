@@ -18,7 +18,6 @@ ull repeating_length(ull q) {
     }
 }
 
-
 int main() {
     ull max_length = 0;
     ull max_q;
@@ -30,7 +29,7 @@ int main() {
         }
     }
 
-    std::cout << max_q << std::endl;
+    std::cout << "Solution: " << max_q << std::endl;
 
     return 0;
 }

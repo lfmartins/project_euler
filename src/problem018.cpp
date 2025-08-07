@@ -1,6 +1,7 @@
 // problem018.cpp
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <string>
 #include <sstream>
 #include <tools.h>
@@ -53,8 +54,7 @@ int main() {
         }
     }
 
-    std::cout << max << std::endl;
-
+    std::cout << "Solution: " << max << std::endl;
 
     return 0;
 }

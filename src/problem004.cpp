@@ -1,13 +1,13 @@
 // problem004.cpp
-
 #include <iostream>
+#include <vector>
 #include <tools.h>
 
 int main() {
     std::cout << "Solving Project Euler Problem 004" << std::endl;
 
-    for (int a = 9; a > 0; --a)
-        for (int b = 9; b >= 0; --b)
+    for (int a = 9; a > 0; --a) {
+        for (int b = 9; b >= 0; --b) {
             for (int c=9; c >= 0; --c) {
                 ull aa = static_cast<ull>(a),
                     bb = static_cast<ull>(b),
@@ -19,11 +19,14 @@ int main() {
                     if (q < 100)
                         break;
                     if (q <= 1000 && m * q == n) {
-                        std::cout << n << std::endl;
+                        std::cout << "Solution: " << n << std::endl;
                         return 0;
                     }
                 }
             }
+        }
+    }
+
     std::cout << "No solutions" << std::endl;
 
     return 0;

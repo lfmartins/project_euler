@@ -26,7 +26,7 @@ int main() {
         if (prod > max_prod)
             max_prod = prod;
     }
-    std::cout << max_prod << std::endl;
+    std::cout << "Solution: " << max_prod << std::endl;
 
     return 0;
 }

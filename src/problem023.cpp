@@ -33,7 +33,7 @@ int main() {
         }
     }
 
-    std::cout << sum << std::endl;
+    std::cout << "Solution: " << sum << std::endl;
 
     return 0;
 }

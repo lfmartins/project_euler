@@ -1,6 +1,7 @@
 // problem013.cpp
 #include <boost/multiprecision/cpp_int.hpp>
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include <string>
 #include <tools.h>
@@ -26,7 +27,7 @@ int main() {
 
     std::string digits = sum.str().substr(0, 10);
 
-    std::cout << digits << std::endl;
+    std::cout << "Solution: " << digits << std::endl;
 	
     return 0;
 }

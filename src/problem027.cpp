@@ -26,7 +26,8 @@ int main() {
         }
     }
 
-    std::cout << amax * bmax << std::endl;
+    std::cout << "nmax=" << nmax << " a=" << amax << " b=" << bmax << std::endl;
+    std::cout << "Solution: " << amax * bmax << std::endl;
 
     return 0;
 }

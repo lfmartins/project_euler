@@ -23,6 +23,7 @@ int main() {
         perm.push_back(d);
     }
 
+    std::cout << "Solution: ";
     for (ull v: perm) {
         std::cout << v;
     }

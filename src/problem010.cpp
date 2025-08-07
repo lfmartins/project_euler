@@ -5,7 +5,7 @@
 int main() {
     std::cout << "Solving Project Euler Problem 010" << std::endl;
 
-    std::cout << ull_sum(sieve(2000000)) << std::endl;
+    std::cout << "Solution: " << ull_sum(sieve(2000000)) << std::endl;
 
     return 0;
 }

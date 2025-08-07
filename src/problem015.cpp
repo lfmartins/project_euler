@@ -18,7 +18,7 @@ int main() {
             table[i][j] = table[j][i] = table[i-1][j] + table[i][j-1];
         }
 
-    std::cout << table[sz][sz] << std::endl;
+    std::cout << "Solution: " << table[sz][sz] << std::endl;
 
     return 0;
 }

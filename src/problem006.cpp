@@ -1,15 +1,15 @@
 // problem006.cpp
 #include <iostream>
+#include <vector>
 #include <tools.h>
 
 int main() {
     std::cout << "Solving Project Euler Problem 006" << std::endl;
+
     ull n = 100;
-    std::vector<ull> numbers = ull_range(1, n + 1);
-    std::vector<ull> squares;
-    for (ull i: numbers)
-        squares.push_back(i * i);
-    ull r = power(ull_sum(numbers), 2) - ull_sum(squares);
-    std::cout << r << std::endl;
+    ull solution = n * (n + 1) * (3 * n * n - n - 2) / 12;
+
+    std::cout << "Solution: " << solution << std::endl;
+
     return 0;
 }

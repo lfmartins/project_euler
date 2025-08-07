@@ -8,10 +8,16 @@
 int main() {
     std::cout << "Solving Project Euler Problem 011" << std::endl;
     
-    std::ifstream file("src/problem011.txt");
+    std:: string fname("data/problem011.txt");
+    std::ifstream file(fname);
+
+    if (!file.is_open()) {
+        std::cout << "Unable to open file " << fname << std::endl;
+        return 1;
+    }
+
     std::string line;
     std::vector<std::vector<ull>> table;
-
     while (std::getline(file, line)) {
         std::istringstream iss(line);
         std::vector<ull> row;
@@ -26,7 +32,6 @@ int main() {
 
     size_t nrows = table.size();
     size_t ncols = table[0].size();
-    
     ull max_prod = 0;
     ull prod = 0;
 
@@ -63,8 +68,7 @@ int main() {
                      max_prod = prod;
             }
 
-    std::cout << max_prod << std::endl;
-    
+    std::cout << "Solution: " << max_prod << std::endl;
     
     return 0;
 }

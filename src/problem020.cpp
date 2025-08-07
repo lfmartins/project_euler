@@ -21,7 +21,7 @@ int main() {
         factorial /= 10;
     }
 
-    std::cout << digit_sum << std::endl;
+    std::cout << "Solution: " << digit_sum << std::endl;
 
     return 0;
 }

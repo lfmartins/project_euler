@@ -10,12 +10,13 @@ int main() {
     ull target = 500;
 
     while(true) {
-        ull ndiv = divisor_count(t);
+        ull ndiv = divisors_count(t);
         if (ndiv > target)
             break;
         t += i++;
     }
-    std::cout << t << std::endl;
+    
+    std::cout << "Solution: " << t << std::endl;
 
     return 0;
 }

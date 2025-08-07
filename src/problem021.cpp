@@ -12,31 +12,22 @@ int main() {
         dsums[m] = proper_divisors_sum(m);
     }
 
-//    for(ull i = 1; i < dsums.size(); ++i) {
-//        std::cout << "i= " << i << " " << dsums[i] << std::endl;
-//    }
-
     std::set<ull> amicables;
     for (ull m = 2; m < bound; ++m) {
         for (ull n = m + 1; n <= bound; ++n) {
             if (dsums[m] == n && dsums[n] == m) {
-//                std::cout << m << " " << n << std::endl;
                 amicables.insert(m);
                 amicables.insert(n);
             }
         }
     }
 
-//    for(ull n: amicables) {
-//        std::cout << n << " ";
-//    }
-
     ull amicables_sum = 0;
     for (ull n: amicables) {
         amicables_sum += n;
     }
 
-    std::cout << amicables_sum << std::endl;
+    std::cout << "Solution: " << amicables_sum << std::endl;
 
     return 0;
 }

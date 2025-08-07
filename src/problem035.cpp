@@ -1,5 +1,4 @@
 // problem035.cpp
-
 #include <iostream>
 #include <tools.h>
 
@@ -27,7 +26,7 @@ int main() {
         }
     }
 
-    std::cout << cp_count << std::endl;
+    std::cout << "Solution: " << cp_count << std::endl;
 
     return 0;
 }

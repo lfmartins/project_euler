@@ -41,7 +41,7 @@ int main() {
         }
     }
 
-    std::cout << sundays << std::endl;
+    std::cout << "Solution: " << sundays << std::endl;
  
     return 0;
 }

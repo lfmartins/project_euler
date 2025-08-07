@@ -82,7 +82,7 @@ int main() {
     std::string one_thousand = "onethousand";
     sum += one_thousand.size();
 
-    std::cout << sum << std::endl;
+    std::cout << "Solution: " << sum << std::endl;
 
     return 0;
 }

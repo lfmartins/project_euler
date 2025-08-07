@@ -11,7 +11,8 @@ int main() {
         ull sum_corners = 2 * (n * (2 * n - 3) + 3);
         sum += sum_corners;
     }
-    std::cout << sum << std::endl;
+
+    std::cout << "Solution: " << sum << std::endl;
 
     return 0;
 }

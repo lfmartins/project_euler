@@ -8,7 +8,8 @@ int main() {
     
     ull v = 600851475143ULL;
     std::vector<fterm> factors = factor(v);
-    std::cout << factors.back().p << std::endl;
+
+    std::cout << "Solution: " << factors.back().p << std::endl;
     
     return 0;
 }

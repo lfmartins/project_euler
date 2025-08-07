@@ -1,5 +1,4 @@
 // problem030.cpp
-
 #include <iostream>
 #include <vector>
 #include <tools.h>
@@ -33,7 +32,8 @@ int main() {
     for (ull s: solutions) {
         result += s;
     }
-    std::cout << result << std::endl;
+
+    std::cout << "Solution: " << result << std::endl;
 
     return 0;
 }
