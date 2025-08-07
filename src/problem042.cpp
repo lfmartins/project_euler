@@ -25,7 +25,7 @@ int main() {
         for (char c: word) {
             score += c - 'A' + 1;
         }
-//        std::cout << "|" << word << "| " << score << std::endl;
+
         for (ull n = 1;; ++n) {
             ull t = n * (n + 1) / 2;
             if (t < score) {
