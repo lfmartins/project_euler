@@ -4,8 +4,17 @@
 #include <algorithm>
 #include <tools.h>
 
-ull extract_value(std::vector<ull> digits, ull k) {
-    return digits[k] * 100 + digits[k + 1] * 10 + digits[k + 2];
+bool check(std::vector<ull> digits) {
+
+    for (size_t i = 1; i <= 7; ++i) {
+        ull v = digits[i] * 100 + digits[i + 1] * 10 + digits[i + 2];
+        if (v % primes_base[i - 1] != 0) {
+            return false;
+        }
+//        std::cout << i << " " << v << std::endl;
+    }
+
+    return true;
 }
 
 int main() {
@@ -18,14 +27,11 @@ int main() {
 
     ull sum = 0;
     do {
-        if (extract_value(digits, 1) % 2 == 0 &&
-            extract_value(digits, 2) % 3 == 0 &&
-            extract_value(digits, 3) % 3 == 0 &&
-            extract_value(digits, 4) % 5 == 0 &&
-            extract_value(digits, 5) % 7 == 0 &&
-            extract_value(digits, 6) % 11 == 0 &&
-            extract_value(digits, 7) % 17 == 0 
-           ) {
+        if (digits[0] == 0) {
+            continue;
+        }
+
+        if (check(digits)) {
             sum += number_from_digits(digits);
         }
     } while (std::next_permutation(digits.begin(), digits.end()));
@@ -36,10 +42,3 @@ int main() {
 }
 
 
-//        for(size_t i = 0; i < 10; ++i) {
-//            std::cout << digits[i];
-//        }
-//        std::cout << std::endl;
-//        if (++count > 20) {
-//            break;
-//        } 
