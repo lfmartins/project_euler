@@ -112,4 +112,7 @@ std::vector<triple<ull>> pythagorean_triples(ull cmax);
 // Determine if a number is palidromic in a base
 bool is_palindromic(ull n, ull base=10);
 
+// Determines if a number is pandigital
+bool is_pandigital(ull n);
+
 #endif // TOOLS_H

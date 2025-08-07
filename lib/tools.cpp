@@ -299,3 +299,28 @@ bool is_palindromic(ull n, ull base) {
 
     return true;
 }
+
+bool is_pandigital(ull n) {
+    std::vector<ull> digits = digits_from_number(n);
+
+    ull sz = digits.size();
+    if (sz > 9) {
+        return false;
+    }
+
+    std::vector<ull> digit_counts(sz, 0);
+
+    for (ull d: digits) {
+        if (d == 0 || d > sz) {
+            return false;
+        }
+        ++digit_counts[d - 1];
+    }
+    for (ull c: digit_counts) {
+        if (c != 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
