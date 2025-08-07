@@ -1,5 +1,4 @@
 // tools.cpp
-
 #include <iostream>
 #include <algorithm>
 #include <tools.h>
@@ -286,4 +285,17 @@ std::vector<triple<ull>> pythagorean_triples(ull cmax) {
         }
     }
     return triples;
+}
+
+bool is_palindromic(ull n, ull base) {
+    std::vector<ull> digits = digits_from_number(n, base);
+
+    for (size_t i = 0; i <= digits.size() / 2; ++i) {
+        size_t j = digits.size() - i - 1;
+        if (digits[i] != digits[j]) {
+            return false;
+        }
+    }
+
+    return true;
 }

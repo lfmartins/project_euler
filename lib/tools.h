@@ -69,10 +69,7 @@ bool is_perfect(ull n);
 
 // Determine if integer is abundant
 bool is_abundant(ull n);
-
-// Determine if integer is deficient
-bool is_deficient(ull n);
-
+// Determine if integer is deficient bool is_deficient(ull n);
 // Determine if two integers are amicable
 bool is_amicable_pair(ull m, ull n); 
 
@@ -111,5 +108,8 @@ ull ull_sum(std::vector<ull> values);
 
 // Pythagorean triples with c <= cmax
 std::vector<triple<ull>> pythagorean_triples(ull cmax);
+
+// Determine if a number is palidromic in a base
+bool is_palindromic(ull n, ull base=10);
 
 #endif // TOOLS_H
