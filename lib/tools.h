@@ -40,6 +40,9 @@ struct triple {
 // Compute floor of square root of n
 ull flsqrt(ull n);
 
+// Determine if a number is a square
+bool is_square(ull n);
+
 // Factorial
 ull factorial(ull n); 
 

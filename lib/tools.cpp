@@ -22,6 +22,11 @@ ull flsqrt(ull n) {
     }
 }
 
+bool is_square(ull n) {
+    ull r = flsqrt(n);
+    return r * r == n;
+}
+
 ull factorial(ull n) {
     if (n == 0) {
         return 1;
