@@ -21,14 +21,8 @@ int main() {
         perm[i] = i + 1;
     }
 
-//    ull cmax = 20;
-//    ull c = 0;
     std::set<ull> prods;
     do {
-//        for (size_t i = 0; i < perm.size(); ++i) {
-//            std::cout << perm[i];
-//        }
-//        std::cout << std::endl;
         for (size_t i = 0; i < 4; ++i) {
             ull b1 = breaks[i][0], b2 = breaks[i][1];
             std::vector<ull> slice1(perm.begin(), perm.begin() + b1);
@@ -40,11 +34,7 @@ int main() {
             if (n1 * n2 == n3) {
                 prods.insert(n3);
             }
-//            std::cout << n1 << " " << n2 << " " << n3 << std::endl;
         }
-//        if (++c > cmax) {
-//            break;
-//        }
     } while(std::next_permutation(perm.begin(), perm.end()));
 
     ull sum = 0;
