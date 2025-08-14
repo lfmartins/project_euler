@@ -229,15 +229,27 @@ ull lcm(std::vector<ull> numbers) {
 }
 
 ull power_mod(ull n, ull e, ull m) {
+    n %= m;
     ull result = 1;
     while (e > 0) {
         if (e % 2 == 1)
-            result = result * e % m;
-        n = n * n % m;
+            result = (result * n) % m;
+        n = (n * n) % m;
         e /= 2;
     }
     return result;
 }
+
+//long long mod_pow(long long a, long long b, long long m) {
+//    a %= m;
+//    long long result = 1;
+//    while (b > 0) {
+//        if (b % 2 == 1) result = (result * a) % m; // if b is odd
+//        a = (a * a) % m;
+//        b /= 2;
+//    }
+//    return result;
+//}
 
 ull ull_power(ull n, ull e) {
     ull result = 1;
