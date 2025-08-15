@@ -9,9 +9,9 @@ int main() {
 //    ull r = power_mod(n, e, m);
 //
 //    std::cout << r << std::endl;
-    ull nmax = 10;
+    ull nmax = 1000;
     ull sum = 0;
-    ull m = ull_power(10, 10);
+    ull m = 10'000'000'000ull;
     for(ull n = 1; n <= nmax; ++n) {
         sum = (sum + power_mod(n, n, m)) % m;
 //        ull p = power_mod(n, n, m);

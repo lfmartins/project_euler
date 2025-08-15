@@ -229,12 +229,12 @@ ull lcm(std::vector<ull> numbers) {
 }
 
 ull power_mod(ull n, ull e, ull m) {
-    n %= m;
+    cpp_int nn = n % m;
     ull result = 1;
     while (e > 0) {
         if (e % 2 == 1)
-            result = (result * n) % m;
-        n = (n * n) % m;
+            result = static_cast<ull>((result * nn) % m);
+        nn = (nn * nn) % m;
         e /= 2;
     }
     return result;
