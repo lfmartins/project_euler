@@ -84,8 +84,8 @@ bool is_prime(ull n) {
     return true;
 }
 
-std::vector<fterm> factor(ull n) {
-    std::vector<fterm> factors;
+factorization factor(ull n) {
+    factorization factors;
 
     if (n == 0) {
         factors.push_back(fterm{0, 1});

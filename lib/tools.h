@@ -22,6 +22,8 @@ struct fterm {
     ull e;
 };
 
+using factorization = std::vector<fterm>;
+
 // Pair of values
 template <typename T>
 struct pair {
@@ -53,7 +55,7 @@ std::vector<ull> sieve(ull limit);
 bool is_prime(ull n);
 
 // Factor number n
-std::vector<fterm> factor(ull n);
+factorization factor(ull n);
 
 // Find the number of divisors of n
 ull divisors_count(ull n);
