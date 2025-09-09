@@ -1,7 +1,8 @@
 // problem029.cpp
 #include <iostream>
-#include <tools.h>
-
+#include "tools.h"
+// this is a test
+//  
 ull prime_exp(ull n, ull p) {
     ull e = 0;
     while (n % p == 0) {
@@ -29,7 +30,7 @@ bool check(ull a, ull b, ull c, ull d) {
 int main() {
     std::cout << "Solving Project Euler Problem 029" << std::endl;
 
-    ull limit = 100;
+    ull limit = 5;
     ull count = 0;
     for (ull a = 2; a <= limit; ++a) {
         for (ull b = 2; b <= limit; ++b) {
